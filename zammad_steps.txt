@@ -1,9 +1,3 @@
-I understand completely—when it comes to lab exams, one missed checkbox can be the difference between a perfect score and a "system error."
-
-Here is the **Master Revision Guide** for your Zammad experiment. I have structured this exactly how you should perform it in the exam to ensure maximum marks for **organization, security, and workflow.**
-
----
-
 ## 🛠️ Phase 1: Environment Preparation (The "Foundation" Steps)
 
 ### 1. Create Functional Groups (Categories)
@@ -47,25 +41,3 @@ This demonstrates you understand Access Control (RBAC).
 * **Action:** Change **State** from `open` to `closed`.
 * **Action:** Click the blue **Update** (or **Confirmation**) button at the bottom.
 * **Verification:** Ensure the ticket disappears from the "Open Tickets" list and shows up in the "Closed" section of the **Dashboard**.
-
----
-
-## 📝 Examiner's "Trap" Checklist (Do not forget these!)
-| Potential Mistake | Fix / Prevention |
-| :--- | :--- |
-| **"I can't see the Wi-Fi group in the ticket"** | Your User profile doesn't have permissions for that group. Go to **Users** → **Edit Yourself** → **Check 'Full' for that Group**. |
-| **"Owner list is empty"** | No user has been assigned the "Agent" role for that specific group. |
-| **"Customer can see other tickets"** | You accidentally gave the "Station Staff" role `ticket.agent` permission. Remove it. |
-| **"Ticket didn't save"** | You typed a note but forgot to hit the blue **Update** button at the bottom right. |
-
----
-
-## 🎓 Practice Case: "Corporate Office Move"
-**Perform this on your own to test your memory:**
-1.  **Create Group:** `Logistics`.
-2.  **Create User:** "CEO" (Customer) and "IT_Mover" (Agent).
-3.  **Create Ticket:** "CEO needs workstation set up in Room 302."
-4.  **Action:** Assign to "IT_Mover," set Priority to **High**, move to `Logistics` group.
-5.  **Closing:** Add an **Internal Note** (click the lock icon) saying "Monitors arrived," then set to **Closed**.
-
-**Save this guide!** You've already fixed the group permission issue in our chat, so as long as you remember to **Assign the Admin to the Groups**, you'll sail through the exam. Good luck!
