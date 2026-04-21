@@ -1,0 +1,71 @@
+I understand completely—when it comes to lab exams, one missed checkbox can be the difference between a perfect score and a "system error."
+
+Here is the **Master Revision Guide** for your Zammad experiment. I have structured this exactly how you should perform it in the exam to ensure maximum marks for **organization, security, and workflow.**
+
+---
+
+## 🛠️ Phase 1: Environment Preparation (The "Foundation" Steps)
+
+### 1. Create Functional Groups (Categories)
+Groups in Zammad define which department handles which ticket.
+* **Action:** Go to **Settings** → **Manage** → **Groups**.
+* **Execution:** Create 3 new groups: `Ticket System`, `Display Board`, and `Wi-Fi`.
+* **Key Detail:** Ensure the "Active" toggle is set to **Yes**.
+
+### 2. Define Custom Roles
+This demonstrates you understand Access Control (RBAC).
+* **Action:** Go to **Settings** → **Manage** → **Roles**.
+* **Role 1 (Support Agent):** Enable `ticket.agent`. Under **Group Permissions**, give "Full" access to the 3 groups created above.
+* **Role 2 (Station Staff):** Enable `ticket.customer`. **Do not** enable `ticket.agent`.
+* **Role 3 (Admin):** Ensure `admin` and `report` permissions are active.
+
+### 3. Create Users & Assign Roles
+* **Action:** Go to **Settings** → **Manage** → **Users**.
+* **User A (The Agent):** Create a user (e.g., "Agent_Amit") and assign the **Support Agent** role.
+* **User B (The Staff):** Create a user (e.g., "Staff_Suresh") and assign the **Station Staff** role.
+* **CRITICAL STEP (The one often missed):** Go into the **Admin (Yourself)** user profile and manually check the "Full" access boxes for the new groups (`Wi-Fi`, etc.). Otherwise, you won't see them in dropdowns.
+
+---
+
+## 🎫 Phase 2: Ticket Lifecycle (The "Action" Steps)
+
+### 4. Ticket Creation (Reporting the Issue)
+* **Action:** Click the **(+) Plus Icon** → **Ticket**.
+* **Step:** Create 3 tickets.
+* **Data Input:**
+    * **Customer:** Select "Staff_Suresh".
+    * **Group:** Match the category (e.g., "Display Board").
+    * **Title/Body:** Be descriptive (e.g., "Screen flickering at Platform 1").
+
+### 5. Ticket Assignment & Status Update
+* **Action:** Open the ticket from the **Overviews** or **Dashboard**.
+* **Step 1 (Assignment):** On the right sidebar, change **Owner** from `-` to "Agent_Amit".
+* **Step 2 (Priority):** Change **Priority** from `2 normal` to `3 high` (Optional, but looks good for marks).
+* **Step 3 (Communication):** Type a note in the center box (e.g., "Technician dispatched to the platform").
+
+### 6. Resolution & Closure
+* **Action:** Change **State** from `open` to `closed`.
+* **Action:** Click the blue **Update** (or **Confirmation**) button at the bottom.
+* **Verification:** Ensure the ticket disappears from the "Open Tickets" list and shows up in the "Closed" section of the **Dashboard**.
+
+---
+
+## 📝 Examiner's "Trap" Checklist (Do not forget these!)
+| Potential Mistake | Fix / Prevention |
+| :--- | :--- |
+| **"I can't see the Wi-Fi group in the ticket"** | Your User profile doesn't have permissions for that group. Go to **Users** → **Edit Yourself** → **Check 'Full' for that Group**. |
+| **"Owner list is empty"** | No user has been assigned the "Agent" role for that specific group. |
+| **"Customer can see other tickets"** | You accidentally gave the "Station Staff" role `ticket.agent` permission. Remove it. |
+| **"Ticket didn't save"** | You typed a note but forgot to hit the blue **Update** button at the bottom right. |
+
+---
+
+## 🎓 Practice Case: "Corporate Office Move"
+**Perform this on your own to test your memory:**
+1.  **Create Group:** `Logistics`.
+2.  **Create User:** "CEO" (Customer) and "IT_Mover" (Agent).
+3.  **Create Ticket:** "CEO needs workstation set up in Room 302."
+4.  **Action:** Assign to "IT_Mover," set Priority to **High**, move to `Logistics` group.
+5.  **Closing:** Add an **Internal Note** (click the lock icon) saying "Monitors arrived," then set to **Closed**.
+
+**Save this guide!** You've already fixed the group permission issue in our chat, so as long as you remember to **Assign the Admin to the Groups**, you'll sail through the exam. Good luck!
