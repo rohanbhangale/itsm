@@ -1,0 +1,67 @@
+Phase 1: Infrastructure Setup (Dependencies)
+1. Create Physical Locations
+Locations must exist first so assets have a "home" to go to.
+
+Navigation: Sidebar → Locations → Create New.
+
+Entries: Screen 1, Screen 2, Ticket Counter.
+
+Exam Tip: Keep descriptions brief; the name is the only mandatory field for marks.
+
+2. Define Asset Categories
+Categories determine how the system treats the item (e.g., if it's a fixed asset or a consumable).
+
+Navigation: Settings (Gear icon) → Categories → Create New.
+
+Entries: Projectors, Computers, Printers.
+
+Critical Setting: Set Category Type to Asset. (If you select 'Accessory', you won't be able to track movement history properly).
+
+3. Create Asset Models (The Template)
+Snipe-IT requires a "Model" before an "Asset." You cannot skip this.
+
+Navigation: Sidebar → Models → Create New.
+
+Entries:
+
+Epson 4K (Category: Projectors)
+
+Dell OptiPlex (Category: Computers)
+
+Thermal Receipt Printer (Category: Printers)
+
+📦 Phase 2: Inventory & Deployment
+4. Create the Actual Assets (Hardware)
+Navigation: Sidebar → Assets → Create New.
+
+Execution: Create one of each using the Models created in Step 3.
+
+The "Marks" Checkbox: Ensure Status is set to Ready to Deploy.
+
+Note: If status is 'Pending' or 'Archived', the Checkout button will disappear.
+
+5. Assignment (Checkout to Location/Staff)
+Action: Go to Assets → List All. Click the blue Checkout button next to an asset.
+
+Targeting: * Checkout to: Select Location.
+
+Location Name: Select Screen 1 or Ticket Counter.
+
+Execution: Click Checkout.
+
+🔄 Phase 3: Movement & Auditing
+6. Tracking Movement (The Transfer)
+To move an asset from Screen 1 to Screen 2, you must perform a "Checkin/Checkout" cycle.
+
+Checkin: Find the asset → Click Checkin → Note: "Moving to Screen 2."
+
+Checkout: Click Checkout again → Select Location → Screen 2.
+
+7. Verifying the Audit Trail (The Proof)
+This is what you show the examiner to prove you "Tracked Movement."
+
+Action: Click the Asset Name (the blue link).
+
+Tab: Click the History tab.
+
+Result: You will see a chronological log: Admin Created → Checked out to Screen 1 → Checked in → Checked out to Screen 2.
