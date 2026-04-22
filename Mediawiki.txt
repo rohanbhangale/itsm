@@ -1,0 +1,54 @@
+Phase 1: Database & Admin Configuration
+Since you are likely using Docker, you will start with the "Web Installer."
+
+Launch the Installer: Open http://localhost:8080 (or your assigned port). Click "set up the wiki."
+
+Database Connection:
+
+Type: MariaDB/MySQL.
+
+Host: db (if using Docker-compose) or localhost.
+
+Name/User/Password: Use the credentials defined in your docker-compose file (usually root or mediawiki).
+
+Admin Account: Create the Bureaucrat account.
+
+Name: Rohan_Admin.
+
+Password: Choose a password.
+
+Finalize: Download the generated LocalSettings.php file and move it into your MediaWiki root directory.
+
+🔐 Phase 2: Roles (User Groups) & Permissions
+In MediaWiki, "Roles" are handled by adding users to Groups.
+
+Assigning Admin: Your account is already in the sysop (Admin) group.
+
+Assigning Teacher/Student: * Go to the search bar and type Special:UserRights.
+
+Enter a username and add them to groups like editor or trusted.
+
+Advanced (The "Exam Flex"): To strictly define a "Teacher" role, you would add this to your LocalSettings.php:
+
+PHP
+$wgGroupPermissions['teacher']['edit'] = true;
+$wgGroupPermissions['student']['edit'] = false; // Students can only read
+🧩 Phase 3: Installing Extensions
+The problem asks for VisualEditor and Cite. These are the most common wiki tools.
+
+Enable Extensions: Open your LocalSettings.php and add these lines at the bottom:
+
+PHP
+wfLoadExtension( 'VisualEditor' );
+wfLoadExtension( 'Cite' );
+Verify: Go to Special:Version on your wiki. You should see both listed under "Installed extensions."
+
+📂 Phase 4: Categories & Sample Pages
+This is the core "Portal" setup.
+
+1. Create Categories
+In MediaWiki, categories are created by making a page with a Category: prefix.
+
+Search for Category:Notes, click Create, type "This category contains study notes," and click Save.
+
+Repeat for Category:Exams and Category:Notices.
