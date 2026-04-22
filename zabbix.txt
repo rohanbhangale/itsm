@@ -1,0 +1,81 @@
+Phase 1: Adding the Infrastructure (Hosts)
+A "Host" is the server you want to monitor.
+
+Go to Data collection → Hosts.
+
+Click Create host (top right).
+
+Host 1 (Web Server):
+
+Host name: Web_Server_01
+
+Templates: Click Select. Search for Linux by Zabbix agent and add it. (This template contains the pre-made monitoring for CPU/RAM).
+
+Host groups: Select or type Web servers.
+
+Interfaces: Click Add → Agent. Use IP 127.0.0.1 (or your Docker container name).
+
+Host 2 (Database Server): Repeat the steps above but name it DB_Server_01.
+
+📊 Phase 2: Configuring Triggers (Thresholds)
+You must tell Zabbix what "Critical" looks like.
+
+Go to Data collection → Hosts.
+
+Click on Triggers in the row for Web_Server_01.
+
+Click Create trigger (top right).
+
+CPU Trigger:
+
+Name: CPU usage above 80%
+
+Severity: High
+
+Expression: Click Add → Item: CPU utilization → Result: > 80.
+
+Disk Trigger: Create another trigger.
+
+Name: Disk space below 10%
+
+Severity: Average
+
+Expression: Item: Used capacity → Result: > 90 (or Free space < 10).
+
+📧 Phase 3: Alerts & Notifications
+This connects the "Problem" to your "Email."
+
+1. Link Email to User
+Go to Users → Users.
+
+Click on your name (Admin).
+
+Click the Media tab → Add.
+
+Type: Email
+
+Send to: your-email@example.com
+
+Click Add, then click Update to save the user.
+
+2. Create the Action (The Logic)
+Go to Alerts → Actions → Trigger actions.
+
+Click Create action.
+
+Name: Alert on Critical Failures
+
+Click the Operations tab.
+
+Under Operations, click Add.
+
+Send to users: Select Admin.
+
+Send only to: Email.
+
+Click Add and then Add again to save the action.
+
+📈 Phase 4: Reports & Performance
+Downtime Report: Go to Reports → Availability report. This shows the % of time your servers were "Up."
+
+Performance Graphs: Go to Monitoring → Hosts → Click Graphs next to a server. You can see the visual trends for CPU and RAM.
