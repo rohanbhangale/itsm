@@ -1,0 +1,5 @@
+git clone https://github.com/zammad/zammad-docker-compose.git
+
+cd zammad-docker-compose
+
+docker-compose up -d
