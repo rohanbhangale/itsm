@@ -1,0 +1,7 @@
+install metabase.jar (search metabase.jar download ) 
+
+
+paste in a folder open that folder in terminal 
+
+run 
+java -jar metabase.jar
